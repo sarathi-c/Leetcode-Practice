@@ -3,16 +3,10 @@ class Solution {
         k = k % nums.length;
         int[] temp = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            if (i < k) {
-                temp[i] = nums[nums.length - k + i];
-            } else {
-                temp[i] = nums[i - k];
-            }
+            temp[(i + k) % nums.length] = nums[i];
         }
-        int j = 0;
-        for (int i : temp) {
-            nums[j] = i;
-            j++;
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = temp[i];
         }
     }
 }
