@@ -1,17 +1,17 @@
-import java.util.HashMap;
-
 class Solution {
-    public int majorityElement(int[] arr) {
-        HashMap<Integer, Integer> mp = new HashMap<>();
-        int majorityCount = arr.length / 2;
-
-        for (int i = 0; i < arr.length; i++) {
-            mp.put(arr[i], mp.getOrDefault(arr[i], 0) + 1);
-            
-            if (mp.get(arr[i]) > majorityCount) {
-                return arr[i]; 
+    public int majorityElement(int[] nums) {
+        int count = 0;
+        int value = 0;
+        for (int i : nums) {
+            if (count == 0) {
+                value = i;
+            }
+            if (i == value) {
+                count++;
+            } else {
+                count--;
             }
         }
-        return -1;
+        return value;
     }
 }
