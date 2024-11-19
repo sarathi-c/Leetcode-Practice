@@ -3,7 +3,7 @@ class Solution {
         if (needle.isEmpty()) {
             return 0;
         }
-        for (int i = 0; i < haystack.length()-needle.length(); i++) {
+        for (int i = 0; i < haystack.length(); i++) {
             if (haystack.charAt(i) == needle.charAt(0)) {
                 int j = 0;
                 int k = i;
